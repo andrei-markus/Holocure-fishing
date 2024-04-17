@@ -117,8 +117,12 @@ def toggle_event(key):
         quit()
 
 
-bot_thread = threading.Thread(target=bot)
-bot_thread.start()
+def main():
+    bot_thread = threading.Thread(target=bot)
+    bot_thread.start()
 
-with Listener(on_press=toggle_event) as listener:
-    listener.join()
+    with Listener(on_press=toggle_event) as listener:
+        listener.join()
+
+if __name__ == "__main__":
+    main()
